@@ -1,3 +1,4 @@
+// UserProfile.jsx
 const UserProfile = (props) => {
   return (
     <div className="user-profile">
