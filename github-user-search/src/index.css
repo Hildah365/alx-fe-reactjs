@@ -1,68 +1,57 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* TailwindCSS Required Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* ============================= */
+/* Optional Custom Styles         */
+/* ============================= */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Center the main container */
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  @apply bg-gray-100 min-h-screen flex items-center justify-center font-sans;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Search form container */
+form {
+  @apply w-full max-w-lg bg-white p-6 rounded-lg shadow-md;
 }
 
+/* Input fields */
+input[type="text"],
+input[type="number"] {
+  @apply w-full p-3 border border-gray-300 rounded mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400;
+}
+
+/* Button */
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  @apply w-full p-3 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600 transition-colors;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Search results container */
+.results {
+  @apply mt-6 grid gap-4;
+}
+
+/* Individual user card */
+.user-card {
+  @apply flex items-center gap-4 border p-4 rounded-lg bg-white shadow-sm;
+}
+
+/* Avatar */
+.user-card img {
+  @apply w-16 h-16 rounded-full;
+}
+
+/* User info text */
+.user-info h3 {
+  @apply font-bold text-lg;
+}
+
+.user-info p {
+  @apply text-gray-700;
+}
+
+.user-info a {
+  @apply text-blue-600 hover:underline;
 }
